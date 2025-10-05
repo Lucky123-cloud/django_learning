@@ -28,6 +28,36 @@ def details(request, id):
     return HttpResponse(template.render(context, request))
 
 
+def main(request):
+    template = loader.get_template('main.html')
+    return HttpResponse(template.render({}, request))
+
+
+# def testing(request):
+#     # template = loader.get_template('template.html')
+#     # context = {
+#     #     'fruits': ['Apple', 'Banana', 'Cherry', 'Date'],
+#     # }
+#     # return HttpResponse(template.render(context, request))
+
+#     mydata = Member.objects.all()
+#     template = loader.get_template('template.html')
+#     context = {
+#         'mydata': mydata,
+#     }
+#     return HttpResponse(template.render(context, request))
+
+
+def testing(request):
+  mydata = Member.objects.all()
+  template = loader.get_template('template.html')
+  context = {
+    'mymembers': mydata,
+  }
+  return HttpResponse(template.render(context, request))
+
+
+
 
 
 # Create your views here.

@@ -8,3 +8,7 @@ class Member(models.Model):
     lastname = models.CharField(max_length=225)
     phone = models.IntegerField(default=0)
     joined_date = models.DateField(default=date.today)
+
+
+    def __str__(self):
+        return f"{self.firstname} {self.lastname}"
